@@ -1,0 +1,142 @@
+<html> <!--Legajo 111565 - Carla Noceti-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    
+  
+        
+    <script>
+        function validarForm() {
+            let txtNombre = document.getElementById('txtNombre').value;
+            let txtApellido = document.getElementById('txtApellido');
+            let cmbHorario = document.getElementById('cmbHorario');
+            let txtFecha = document.getElementById('txtFecha').value
+            let txtEmail = document.getElementById('txtEmail').value
+            let txtContraseña = document.getElementById('txtContraseña').value
+            let mensaje = "";
+            if(txtNombre == "")
+                mensaje += '<li  class="list-group-item list-group-item-danger">Cargue el nombre</li>';            
+
+            if(txtApellido.value == "")
+                mensaje += '<li  class="list-group-item list-group-item-danger">Cargue el apellido</li>';
+            
+            if(cmbTipoDocumento.value == "")
+                mensaje += '<li  class="list-group-item list-group-item-danger">Seleccione un tipo de documento</li>';    
+            
+            
+            }
+
+                        if (txtFecha ==""){
+                mensaje += '<li  class="list-group-item list-group-item-danger"">Cargue la fecha</li>'; 
+            }
+
+                       if(mensaje != "")
+            {
+                document.getElementById('divAlerta').innerHTML = "<ul class= list-group>" + mensaje + "</ul><button type='button' class='close' data-dismiss='alert' aria-label='Close' id='btnCerrar'  onclick='cerrarAlerta()'><span aria-hidden='true'>×</span></button>";
+                document.getElementById('divAlerta').style.display = 'block'
+            }
+            else
+                document.getElementById('AlertaDeConfirmacion').style.display = 'block';
+
+           
+        
+        
+
+       
+        function cerrarAlerta()
+        {
+            document.getElementById('divAlerta').style.display = 'none';
+        }
+        
+    </script>
+    
+</head>
+<body>
+    
+   
+    <div class="header bg-primary text-white  w-100 h-40 text-sm-right text-md-right text-lg-center text-xl-center">
+        <h1 class="display-4 ">Formulario del paciente</h1>
+    </div>
+    <br>
+    <br>
+    <div class="alert alert-primary" role="alert">
+        NUEVO —check it out!
+      </div>
+    <div class="container-fluid">
+        <br>
+        <span class="badge badge-primary">Primary</span>
+        <span class="badge badge-warning">Alerta</span>
+        <br>
+        
+        <div class="alert alert-danger" role="alert">
+            Esta es una nueva alerta <a href="#" class="alert-link">para que se en color</a>. Give it a click if you like.
+          </div>
+        
+        <div class="contain
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="alert alert-success" role="alert" id="AlertaDeConfirmacion"> 
+                       Formulario completado con exito
+                      </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="divAlerta">
+                        Algo de alerta
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btnCerrar" onclick="cerrarAlerta()">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                    <form class="">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Nombre: </label>
+                            <input type="text" class="form-control" id="txtNombre" placeholder="Nombre">
+                          </div>
+                        <div class="form-group">
+                            <label>Apellido: </label><br>
+                            <input class="form-control"  placeholder="Apellido" type="text" id="txtApellido" />
+                        </div>
+                            
+                         
+                        
+                        <br>
+                        <div>
+                            <label>Horario: </label>
+                            <select class="form-control" id="cmbHorario">
+                                <option value="">Seleccione</option>
+                                <option value="1">DEsayuno</option>
+                                <option value="2">Almuerzo</option>
+                                <option value="3">Cena</option>
+                            </select>
+                        </div>
+                        <br>
+                        
+                        <div class = "form-group">
+                            <label for="password">Contraseña</label>
+                            <input  class="form-control" type="password" placeholder="Contraseña" maxlength="12" id="txtContraseña" >
+                            <p class="help-block">Máximo de 12 caracteres</p>
+                            <br>
+                        </div>  
+                        <div class="form-group">
+                            <label>Fecha: </label><br>
+                            <input class="form-control"  placeholder="Fecha" type="text" id="txtFecha" />
+                        </div> 
+                       
+                        <input class= "btn btn-primary" type="button" value="Aceptar" onclick="validarForm()" />
+                        
+                        <a href="pagprincipal.html">Ir a pagina principal</a>
+                        
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //para que no se muestren las alertas desde el principio
+        document.getElementById('divAlerta').style.display = 'none'
+        document.getElementById('AlertaDeConfirmacion').style.display = 'none'
+    </script>
+</body>
+</html>
